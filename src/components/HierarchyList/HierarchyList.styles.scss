@@ -1,30 +1,28 @@
 .selection {
   display: flex;
   transition: 2s;
-
+  margin: 1.2rem 1rem 0 0;
   height: 20px;
-  margin: 10px;
 }
 .placeholder {
   font-family: "Nunito Sans", sans-serif;
 }
 
 .icon {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .title {
   font-family: "Quicksand", sans-serif;
   font-size: 4rem;
   text-align: left;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 .container {
-  width: 80%;
-  margin-left: 3rem;
+  width: 100%;
 }
 
 .list-container {
-  margin: 20px 20px 0 0;
+  margin: 1rem 0 1rem 0;
 }
