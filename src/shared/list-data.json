@@ -1,0 +1,122 @@
+{
+  "root": [
+    {
+      "type": "checkbox",
+      "id": "header-id",
+      "placeholder": "Nagłówek drzewa wielowierszowy",
+      "children": [
+        {
+          "type": "radio",
+          "id": "subdep1-id",
+          "placeholder": "Pododdzial 1",
+          "children": [
+            {
+              "type": "final",
+              "id": "team1-hr-id",
+              "placeholder": "Zespół 1 HR",
+              "children": []
+            },
+            {
+              "type": "final",
+              "id": "team2-marketing-id",
+              "placeholder": "Zespół 2 Marketing",
+              "children": []
+            },
+            {
+              "type": "checkbox",
+              "id": "team3-analytics-id",
+              "placeholder": "Zespół 3 Analitycy",
+              "children": [
+                {
+                  "type": "final",
+                  "id": "subteam31-calendar-id",
+                  "placeholder": "Podzespół 3.1 Kalendarz",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam32-cocpit-id",
+                  "placeholder": "Podzespół 3.2 Kokpit",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam33-view-id",
+                  "placeholder": "Podzespół 3.3 Widok",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam-34-misc-id",
+                  "placeholder": "Podzespół 3.4 Róności",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam35-search-id",
+                  "placeholder": "Podzespół 3.5 Szukaj",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "id": "team4-programmers-id",
+              "placeholder": "Zespół 4 Programiści",
+              "children": [
+                {
+                  "type": "final",
+                  "id": "subteam41-fe-id",
+                  "placeholder": "Podzespół 4.1 Front-end",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam42-mfe-id",
+                  "placeholder": "Podzespół 4.2 Middle-front-end",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam43-me-id",
+                  "placeholder": "Podzespół 4.3 Middle-end",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam44-mbe-id",
+                  "placeholder": "Podzespół 4.4 Middle-back-end",
+                  "children": []
+                },
+                {
+                  "type": "final",
+                  "id": "subteam45-be-id",
+                  "placeholder": "Podzespół 4.5 Back-end",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radio",
+          "id": "subdep2-id",
+          "placeholder": "Pododdzial 2",
+          "children": []
+        },
+        {
+          "type": "radio",
+          "id": "subdep3-id",
+          "placeholder": "Pododdzial 3",
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "final",
+      "id": "unreserved-id",
+      "placeholder": "Niezrzeszeni",
+      "children": []
+    }
+  ]
+}
