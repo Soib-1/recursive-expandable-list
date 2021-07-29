@@ -1,8 +1,8 @@
 import React from "react";
 import data from "../../shared/list-data.json";
 import "./HierarchyList.styles.scss";
-import { BsFillDashSquareFill } from "react-icons/bs";
-import { ImRadioChecked } from "react-icons/im";
+import { BiMessageSquareMinus } from "react-icons/bi";
+import { BiCircle } from "react-icons/bi";
 
 const departments = data.root;
 
@@ -23,7 +23,7 @@ const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
   };
 
   return (
-    <div>
+    <div className="list-container">
       {departments.map((department) => (
         <ul>
           <Selection
@@ -54,9 +54,9 @@ const Selection = ({ selected, placeholder, onChange, type }) => {
   return (
     <div>
       <div className="selection" onClick={() => onChange(!selected)}>
-        {type === "checkbox" && <BsFillDashSquareFill className="icon" />}
-        {type === "radio" && <ImRadioChecked className="icon" />}
-        {placeholder}
+        {type === "checkbox" && <BiMessageSquareMinus className="icon" />}
+        {type === "radio" && <BiCircle className="icon" />}
+        <div className="placeholder">{placeholder}</div>
       </div>
     </div>
   );
@@ -69,8 +69,9 @@ export default class HierarchyList extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Softwarely Task</h1>
+      <div className="container">
+        <p className="title">Softwarely Task</p>
+        <hr />
         <DepartmentList
           departments={departments}
           selectedDepartments={this.state.selectedDepartments}

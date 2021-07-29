@@ -3,12 +3,28 @@
   transition: 2s;
 
   height: 20px;
-  margin: 40px;
+  margin: 10px;
 }
 .placeholder {
-  margin: 20px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .icon {
   margin-right: 5px;
+}
+
+.title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 4rem;
+  text-align: left;
+  margin-left: 3rem;
+}
+
+.container {
+  width: 80%;
+  margin-left: 3rem;
+}
+
+.list-container {
+  margin: 20px 20px 0 0;
 }
