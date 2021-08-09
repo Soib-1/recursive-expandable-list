@@ -1,8 +1,18 @@
+@mixin even() {
+  &:nth-child(even) {
+    @content;
+  }
+}
+
 .selection {
   display: flex;
-  transition: 2s;
+  justify-items: flex-start;
+  justify-content: flex-start;
   margin: 1.2rem 1rem 0 0;
   height: 20px;
+  .icon {
+    font-size: 1.4rem;
+  }
 }
 .placeholder {
   font-family: "Nunito Sans", sans-serif;
@@ -12,17 +22,58 @@
   margin-right: 7px;
 }
 
-.title {
-  font-family: "Quicksand", sans-serif;
-  font-size: 4rem;
-  text-align: left;
-  margin-left: 2rem;
-}
-
 .container {
   width: 100%;
+  .title-container {
+    height: 20vh;
+    background: black;
+    display: flex;
+    .title {
+      font-family: "Quicksand", sans-serif;
+      font-size: 3rem;
+      text-align: left;
+      margin-left: 2rem;
+      color: white;
+    }
+  }
+}
+ul {
+  div {
+    &:nth-child(odd) {
+      .entry {
+        background: #cf2;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    &:nth-child(n) {
+      border-radius: 3px;
+    }
+  }
 }
 
-.list-container {
-  margin: 1rem 0 1rem 0;
+.entry:only-child {
+  &:nth-child(odd) {
+  }
+  &:only-child {
+    &:nth-child(odd) {
+      &:nth-child(odd) {
+        color: #444;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.entry {
+  display: flex;
+  justify-items: flex-start;
+  justify-content: flex-start;
+  color: #b91212;
+  font-weight: bold;
+  cursor: pointer;
+  &:empty {
+    cursor: text;
+  }
 }

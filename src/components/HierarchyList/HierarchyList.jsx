@@ -1,10 +1,8 @@
 import React from "react";
-import data from "../../shared/list-data.json";
+import departments from "../../shared/list-data.json";
 import "./HierarchyList.styles.scss";
 import { BiMessageSquareMinus } from "react-icons/bi";
 import { BiCircle } from "react-icons/bi";
-
-const departments = data.root;
 
 const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
   const handleDepartmentSelect = (selectedDepartmentId) => {
@@ -52,7 +50,7 @@ const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
 
 const Selection = ({ selected, placeholder, onChange, type }) => {
   return (
-    <div>
+    <div className="entry">
       <div className="selection" onClick={() => onChange(!selected)}>
         {type === "checkbox" && <BiMessageSquareMinus className="icon" />}
         {type === "radio" && <BiCircle className="icon" />}
@@ -70,8 +68,9 @@ export default class HierarchyList extends React.Component {
   render() {
     return (
       <div className="container">
-        <p className="title">Softwarely Task</p>
-        <hr />
+        <div className="title-container">
+          <p className="title">Recursive List</p>
+        </div>
         <DepartmentList
           departments={departments}
           selectedDepartments={this.state.selectedDepartments}
