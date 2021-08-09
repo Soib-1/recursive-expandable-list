@@ -23,7 +23,7 @@ const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
   return (
     <div className="list-container">
       {departments.map((department) => (
-        <ul>
+        <ul className="li-container">
           <Selection
             selected={selectedDepartments[department.id]}
             placeholder={department.placeholder}
@@ -31,6 +31,7 @@ const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
             onChange={() => {
               handleDepartmentSelect(department.id);
             }}
+            children={department.children.length}
           />
           {department.children.length > 0 &&
             selectedDepartments[department.id] && (
@@ -48,10 +49,13 @@ const DepartmentList = ({ departments, selectedDepartments, onChange }) => {
   );
 };
 
-const Selection = ({ selected, placeholder, onChange, type }) => {
+const Selection = ({ selected, placeholder, onChange, type, children }) => {
   return (
     <div className="entry">
-      <div className="selection" onClick={() => onChange(!selected)}>
+      <div
+        className={children > 0 ? "selection" : "child"}
+        onClick={() => onChange(!selected)}
+      >
         {type === "checkbox" && <BiMessageSquareMinus className="icon" />}
         {type === "radio" && <BiCircle className="icon" />}
         <div className="placeholder">{placeholder}</div>
@@ -71,13 +75,15 @@ export default class HierarchyList extends React.Component {
         <div className="title-container">
           <p className="title">Recursive List</p>
         </div>
-        <DepartmentList
-          departments={departments}
-          selectedDepartments={this.state.selectedDepartments}
-          onChange={(selectedDepartments) =>
-            this.setState({ selectedDepartments })
-          }
-        />
+        <div className="list-container">
+          <DepartmentList
+            departments={departments}
+            selectedDepartments={this.state.selectedDepartments}
+            onChange={(selectedDepartments) =>
+              this.setState({ selectedDepartments })
+            }
+          />
+        </div>
       </div>
     );
   }
